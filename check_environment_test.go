@@ -7,12 +7,12 @@ import (
 
 func TestCheckOptionalEnvironmentVariables(t *testing.T) {
 	LoadEnvFiles("test0.env", "test1.env")
-	CheckOptionalEnvironmentVariables([]string{"city", "country"})
+	CheckOptionalEnvironmentVariables("city", "country")
 }
 
 func TestCheckRequiredEnvironmentVariables(t *testing.T) {
 	LoadEnvFiles("test0.env", "test1.env")
-	CheckRequiredEnvironmentVariables([]string{"city", "alan"})
+	CheckRequiredEnvironmentVariables("city", "alan")
 }
 
 func TestCheckRequiredEnvironmentVariables2(t *testing.T) {
@@ -23,5 +23,5 @@ func TestCheckRequiredEnvironmentVariables2(t *testing.T) {
 			return
 		}
 	}()
-	CheckRequiredEnvironmentVariables([]string{"turing"})
+	CheckRequiredEnvironmentVariables("turing")
 }

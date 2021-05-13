@@ -24,11 +24,11 @@ env.FallbackEnvVariable("environmentVariableKey","fallbackValue")
 ### Required variables check
 Checks if there are **required** environment variables not set. 
 ```
-env.CheckPossibleEnvironmentVariables([]string{"environmentVariableKey0","environmentVariableKey1"})
+env.CheckPossibleEnvironmentVariables("environmentVariableKey0","environmentVariableKey1")
 ```
 
 ### Optional variables check
 Checks if there are optional environment variables not set. 
 ```
-env.CheckPossibleEnvironmentVariables([]string{"environmentVariableKey0","environmentVariableKey1"})
+env.CheckPossibleEnvironmentVariables("environmentVariableKey0","environmentVariableKey1")
 ```
