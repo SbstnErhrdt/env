@@ -11,24 +11,24 @@ go get github.com/SbstnErhrdt/env
 
 ### Load env files
 Loads different env files. Prints warnings if the files not present. 
-```
+```go
 env.LoadEnvFiles(filenames ...string)
 ```
 
 ### Fallback environment variables
 Sets fallback variables for env variables. 
-```
+```go
 env.FallbackEnvVariable("environmentVariableKey","fallbackValue")
 ```
 
 ### Required variables check
 Checks if there are **required** environment variables not set. 
-```
+```go
 env.CheckPossibleEnvironmentVariables("environmentVariableKey0","environmentVariableKey1")
 ```
 
 ### Optional variables check
 Checks if there are optional environment variables not set. 
-```
+```go
 env.CheckPossibleEnvironmentVariables("environmentVariableKey0","environmentVariableKey1")
 ```
