@@ -9,6 +9,6 @@ func LoadEnvFiles(filenames ...string) {
 	// Load environment
 	err := godotenv.Load(filenames...)
 	if err != nil {
-		log.Warning("an error occurred while loading the .env files:", err)
+		log.Warning("an error occurred while loading the .env files: ", err)
 	}
 }

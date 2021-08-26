@@ -8,10 +8,14 @@ import (
 func FallbackEnvVariable(envKey, fallbackValue string) string {
 	result := os.Getenv(envKey)
 	if len(result) == 0 {
-		log.Warning("Using fallback value", fallbackValue, "for env variable", envKey)
+		log.WithField("key", envKey).
+			WithField("fallbackValue", fallbackValue).
+			Warning("Using fallback")
 		err := os.Setenv(envKey, fallbackValue)
 		if err != nil {
-			log.Fatal("can not set fallback variable", envKey, fallbackValue)
+			log.WithField("key", envKey).
+				WithField("fallbackValue", fallbackValue).
+				Fatal("can not set fallback variable")
 		}
 		return fallbackValue
 	}
