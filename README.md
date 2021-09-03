@@ -1,6 +1,9 @@
-# Env - Work in progress
+# Env
 
 This is a small go module that helps with environment variables.
+
+* Load environment files `.env`
+* Provides fallback variables
 
 ## Installation
 ```
@@ -8,6 +11,21 @@ go get github.com/SbstnErhrdt/env
 ```
 
 ## Usage
+
+Put a `.env` file in the working directory.
+This might look like this
+```
+KEY=value1234
+```
+
+In your `main()` funcion:
+```go
+func main() {
+	// load end
+	env.LoadEnvFiles()
+  ...
+}
+```
 
 ### Load env files
 Loads different env files. Prints warnings if the files not present. 
