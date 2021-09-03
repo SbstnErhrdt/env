@@ -21,7 +21,7 @@ KEY=value1234
 In your `main()` funcion:
 ```go
 func main() {
-	// load end
+	// load env
 	env.LoadEnvFiles() // reads the .env file in the working directory
   ...
 }
