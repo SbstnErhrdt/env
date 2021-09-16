@@ -10,7 +10,7 @@ func FallbackEnvVariable(envKey, fallbackValue string) string {
 	if len(result) == 0 {
 		log.WithField("key", envKey).
 			WithField("fallbackValue", fallbackValue).
-			Warning("Using fallback")
+			Warning("using fallback")
 		err := os.Setenv(envKey, fallbackValue)
 		if err != nil {
 			log.WithField("key", envKey).
