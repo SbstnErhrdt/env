@@ -2,7 +2,7 @@ package env
 
 import (
 	"errors"
-	log "github.com/sirupsen/logrus"
+	"log/slog"
 	"os"
 )
 
@@ -25,7 +25,7 @@ func CheckRequiredEnvironmentVariables(requiredEnvironmentVariables ...string) {
 	// if necessary env variable: panic
 	if len(errs) != 0 {
 		for _, e := range errs {
-			log.Error(e, " environment variable is missing. Please add the variable to startup the system")
+			slog.With("err", e).Error("environment variable is missing. Please add the variable to startup the system")
 		}
 		panic("Missing required environment variables")
 	}
@@ -38,7 +38,7 @@ func CheckOptionalEnvironmentVariables(possibleEnvironmentVariables ...string) {
 	// if necessary env variable: panic
 	if len(errs) != 0 {
 		for _, e := range errs {
-			log.Warning(e, " environment variable can be set but is missing")
+			slog.With("err", e).Warn("environment variable can be set but is missing")
 		}
 	}
 	return

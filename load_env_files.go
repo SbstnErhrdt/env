@@ -1,14 +1,13 @@
 package env
 
 import (
-	"github.com/joho/godotenv"
-	log "github.com/sirupsen/logrus"
+	"log/slog"
 )
 
 func LoadEnvFiles(filenames ...string) {
 	// Load environment
-	err := godotenv.Load(filenames...)
+	err := Load(filenames...)
 	if err != nil {
-		log.Warning("an error occurred while loading the .env files: ", err)
+		slog.With("err", err).Warn("an error occurred while loading the .env files")
 	}
 }
